@@ -1,0 +1,26 @@
+{
+  "name": "genpark-personal-agent-caffeine-adenosine-pharmacokinetics-skill",
+  "version": "1.0.0",
+  "description": "Simulates caffeine elimination pharmacokinetics, models adenosine receptor occupancy, and schedules intake windows to protect deep slow-wave sleep.",
+  "tools": [
+    {
+      "name": "simulate_caffeine_clearance",
+      "description": "Simulates hour-by-hour caffeine clearance, bedtime residual, and deep sleep suppression.",
+      "parameters": {
+        "caffeine_doses": "list of objects with {hour, mg}",
+        "metabolism_rate": "string (optional, default 'normal')",
+        "bedtime_hour": "float (optional, default 23.0)"
+      }
+    },
+    {
+      "name": "calculate_optimal_ingestion_schedule",
+      "description": "Calculates optimal morning delay (CAR) and strict afternoon cutoff for sleep preservation.",
+      "parameters": {
+        "target_wake_time": "string (optional, default '07:00')",
+        "bedtime": "string (optional, default '23:00')",
+        "total_mg_budget": "float (optional, default 200.0)",
+        "metabolism_rate": "string (optional, default 'normal')"
+      }
+    }
+  ]
+}
